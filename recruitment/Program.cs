@@ -25,8 +25,9 @@
 // Console.ReadLine();
 List<string> recruites = ["John", "Johan", "Josef", "Jonkler"];
 List<string> platser = [];
+List<string> namnval = ["1" , "2" , "3" , "4"];
 
-while (recruites.Count >= 1)
+while (platser.Count < 3)
 {
    //List<string>recruites = ["John", "Johan", "Josef", "Jonkler"];
    //List<string>platser =["plats1","plats2", "plats3"];
@@ -48,6 +49,10 @@ while (recruites.Count >= 1)
    {
       System.Console.WriteLine("Skriv ett av nummerna 1 till 4");
       string namn = Console.ReadLine();
+      while(!namnval.Contains(namn)){
+         System.Console.WriteLine("Skriv ett tal från 1 till 4");
+         namn = Console.ReadLine();
+      }
       int.TryParse(namn, out namnnum);
       namnnum -= 1;
       // System.Console.WriteLine(Skriv);
@@ -55,9 +60,9 @@ while (recruites.Count >= 1)
    //platser.RemoveAt(namnnum);
    platser.Add(recruites[namnnum]);
    recruites.RemoveAt(namnnum);
-
 }
-if (recruites.Count == 1)
+
+if (platser.Count == 3)
 {
    System.Console.WriteLine($"Du har nu {platser.Count} färdigutbildade helldivers redo för strid.");
    System.Console.WriteLine($"{platser[0]} och {platser[1]} och {platser[2]}");
